@@ -1,0 +1,35 @@
+.section {
+  @apply max-w-5xl mx-auto px-4;
+}
+
+/* Card-style container */
+.card {
+  @apply bg-neutral-900 border border-neutral-800 rounded-lg;
+}
+
+.input-ui {
+  width: 100%;
+  padding: 0.75rem;
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 0.5rem;
+  color: white;
+  outline: none;
+}
+
+.input-ui:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary {
+  background: #6366f1;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+}
