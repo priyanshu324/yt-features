@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useAuth } from '../store/authStore';
-import { ADMIN_EMAIL } from '../store/adminStore';
 
 /* inside component */
 
