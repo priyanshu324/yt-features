@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import AdminClient from './AdminClient';
-import { ADMIN_EMAIL } from '../store/adminStore';
-import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
     title: 'Admin Dashboard – Creator OCR',
