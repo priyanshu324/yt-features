@@ -11,6 +11,7 @@ interface User {
 
 interface AuthContextType {
     user: User | null;
+    loading: boolean;
     loginWithCredentials: (email: string, password: string) => Promise<void>;
     registerWithCredentials: (name: string, email: string, password: string) => Promise<void>;
     logout: () => void;
@@ -22,13 +23,14 @@ const API = process.env.NEXT_PUBLIC_API_URL;
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
-
+    const [loading, setLoading] = useState(true);
     // Restore session
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
+        setLoading(false);
     }, []);
 
     const loginWithCredentials = async (email: string, password: string) => {
@@ -77,7 +79,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     return (
         <AuthContext.Provider
-            value={{ user, loginWithCredentials, registerWithCredentials, logout }}
+            value={{ user, loading, loginWithCredentials, registerWithCredentials, logout }}
         >
             {children}
         </AuthContext.Provider>
