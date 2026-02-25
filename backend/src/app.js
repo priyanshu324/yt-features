@@ -14,7 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://192.168.1.10:3000"],
+    origin: [
+      "https://yt-features.vercel.app",
+      "https://yt-features-82azmh9wz-priyanshu845s-projects.vercel.app",
+    ],
     credentials: true,
   }),
 );
