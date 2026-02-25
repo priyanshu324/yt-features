@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: creator-ocr-backend
+    runtime: node
+    plan: starter
+
+    buildCommand: |
+      apt-get update
+      apt-get install -y poppler-utils tesseract-ocr
+      npm install
+
+    startCommand: npm run start
