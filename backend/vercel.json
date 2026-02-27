@@ -1,0 +1,6 @@
+{
+ "version" : 2,
+  "build": [{"src":"./src/server.js", "use":"@vercel/node"}],
+  
+  "rotues": [{"src":"./src/(.*)", "dest":"/"}],
+}
